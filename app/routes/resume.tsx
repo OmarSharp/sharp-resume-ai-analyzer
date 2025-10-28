@@ -1,9 +1,10 @@
 import {Link, useNavigate, useParams} from "react-router";
 import {useEffect, useState} from "react";
 import {usePuterStore} from "~/lib/puter";
-// import Summery from "~/components/Summery";
-// import Ats from "~/components/Ats";
-// import ResumeDetails from "~/components/ResumeDetails";
+import ResumeDetails from "~/components/ResumeDetails";
+import Ats from "~/components/Ats";
+import ResumeSummary from "~/components/ResumeSummary";
+
 
 export const meta  = () => ([
     {title: 'Sharp-Resume | Resume Result'},
@@ -22,13 +23,13 @@ const Resume = () => {
 
     useEffect(() => {
         if (!isLoading && auth.isAuthenticated){
-            navigate(`/auth?next=/resume-results/${id}`);
+            navigate(`/auth?next=/resume/${id}`);
         }
     }, [isLoading]);
 
     useEffect(() => {
         const loadResume = async () => {
-            const resume = await kv.get (`resume-results:${id}`);
+            const resume = await kv.get (`resume:${id}`);
             if (!resume) return;
             
             const data = JSON.parse(resume);
@@ -80,11 +81,11 @@ const Resume = () => {
                     <h2 className=" text-3xl font-bold">Resume Review</h2>
                     {feedback ? (
                         <div className="flex flex-col gap-8 animate-out fade-out duration-700">
-                            {/*<Summery feedback = {feedback} />*/}
+                            <ResumeSummary feedback = {feedback} />
 
-                            {/*<Ats score = {feedback.ATS.score || 0} suggestions = {feedback.ATS.tips || [] } />*/}
+                            <Ats score = {feedback.ATS.score || 0} suggestions = {feedback.ATS.tips || [] } />
 
-                            {/*<ResumeDetails feedback = {feedback} />*/}
+                            <ResumeDetails feedback = {feedback} />
 
                         </div>
                     ):(

@@ -44,11 +44,11 @@ export default function Home() {
 
         <section className="main-section">
             <div className="page-heading py-16">
-                <h1>Track Your Applications & Resume Ratings</h1>
+                <h1>Stay on Top of Every Application with Smart Resume Insights</h1>
                 {!loadingResumes && resumes?.length === 0 ? (
-                    <h2>No resumes found. Upload your first resume to get feedback.</h2>
+                    <h2>No resumes found. Upload your first resume(CV) to get feedback.</h2>
                 ): (
-                    <h2>Review your submissions and check AI-powered feedback.</h2>
+                    <h2>Analyze Your Submissions with Automated Puter AI Feedback.</h2>
                 )}
             </div>
             {loadingResumes && (
@@ -68,7 +68,7 @@ export default function Home() {
             {!loadingResumes && resumes?.length === 0 && (
                 <div className="flex flex-col items-center justify-center mt-10 gap-4">
                     <Link to="/upload" className="primary-button w-fit text-xl font-semibold">
-                        Upload Resume
+                        Upload Resume(CV)
                     </Link>
                 </div>
             )}

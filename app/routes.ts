@@ -5,9 +5,5 @@ export default [
     route('/auth', 'routes/auth.tsx'),
     route('/upload', 'routes/upload.tsx'),
     route('/resume/:id', 'routes/resume.tsx'),
-
-    route('/upload-open-ai', 'routes/upload-open-ai.tsx'),
-
-
-
+    route('/earse', 'routes/earse.tsx'),
 ] satisfies RouteConfig;
