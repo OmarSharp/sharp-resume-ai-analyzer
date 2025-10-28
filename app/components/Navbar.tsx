@@ -8,8 +8,9 @@ const Navbar = () => {
                 <p className=" text-2xl font-bold text-gradient">#_Sharp Resume</p>
             </Link>
             <Link to="/upload" className="primary-button w-fit">
-                Upload Resume
+                Upload Resume- With Puter
             </Link>
+
         </nav>
     );
 };

@@ -1,4 +1,3 @@
-
 import {type FormEvent, useState} from 'react'
 import Navbar from "~/components/Navbar";
 import FileUploader from "~/components/FileUploader";
@@ -80,7 +79,7 @@ const Upload = () => {
     }
 
     return (
-        <main>
+        <main className="bg-[url('/images/bg-main.svg')] bg-cover">
             <Navbar />
 
             <section className="main-section">
